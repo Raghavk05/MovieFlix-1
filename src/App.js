@@ -9,12 +9,17 @@ import Account from './pages/account';
 import SignUp from './pages/signup';
 import Home from './pages/home';
 import Footer from './components/Footer'
+import Login from './pages/Login'
 
 function App() {
+  const user = null;
 
   return ( 
 <div className="thewholething"> 
     <Router>
+      {!user ? (
+        <Login/>
+      ): (
       <div>
           <Navbar />
           <Routes>
@@ -26,8 +31,9 @@ function App() {
           <Route path='/sign-up' element={<SignUp/>} />
           </Routes>  
         </div>
+      )}
+      <footer />
     </Router>
-    <Footer/>
 </div>
   );
 }
